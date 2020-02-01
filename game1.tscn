@@ -45,9 +45,10 @@ current = true
 script = ExtResource( 3 )
 
 [node name="Button" type="Button" parent="Camera2D2"]
-margin_left = -7.71204
-margin_top = 9.06299
-margin_right = 4.28796
-margin_bottom = 29.063
+margin_left = 911.219
+margin_top = 559.668
+margin_right = 1017.22
+margin_bottom = 598.668
+text = "save"
 script = ExtResource( 4 )
 [connection signal="pressed" from="Camera2D2/Button" to="Camera2D2/Button" method="_on_Button_pressed"]
