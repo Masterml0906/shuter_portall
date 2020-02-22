@@ -83,16 +83,16 @@ func reycast (from,to):
 func mouse_action():
 	if Input.is_action_just_pressed("mouse_left"):
 		var mpos=get_global_mouse_position()
-		var call=reycast(self.position,mpos)
+		var call=reycast(self.position, mpos)
 		if call:
-			var cell=$"../TileMap".world_to_map(call.position)
-			cell.x += call.normal.x
-			cell.y += call.normal.y
-			$"../TileMap".set_cell(cell.x,cell.y,0)
+			var cell=$"../TileMap".world_to_map(call.position + call.normal)
+			#cell.x += call.normal.x
+			#cell.y += call.normal.y
+			$"../TileMap".set_cellv(cell, 0)
 	
 	if Input.is_action_just_pressed("mouse_rigth"):
 		var mpos=get_global_mouse_position()
 		var call=reycast(self.position,mpos)
 		if call:
-			var cell=$"../TileMap".world_to_map(call.position)
-			$"../TileMap".set_cell(cell.x,cell.y,-1)
+			var cell=$"../TileMap".world_to_map(call.position - call.normal)
+			$"../TileMap".set_cell(cell.x, cell.y, -1)
